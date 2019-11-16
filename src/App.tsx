@@ -100,7 +100,6 @@ const App: React.FC = () => {
   };
   const mqtt = useMqtt("e_sensor/+", (topic, msg) => {
     const prevData = graph.current.graphData();
-    console.log(topic, msg);
     const id = v4();
 
     const keys = Object.keys(msg).filter(f => f !== "now");
@@ -115,7 +114,6 @@ const App: React.FC = () => {
         : null;
 
       const delta = last != null ? msg[key] / last.value : null;
-      console.log(delta);
       values.current[t].push({ id: v4(), key, value: msg[key], delta });
     });
   });
