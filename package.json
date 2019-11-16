@@ -3,14 +3,21 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "3d-force-graph": "^1.56.4",
+    "3d-force-graph-vr": "^1.29.2",
     "@types/jest": "24.0.23",
+    "@types/lodash": "^4.14.148",
     "@types/node": "12.12.8",
     "@types/react": "16.9.11",
     "@types/react-dom": "16.9.4",
+    "lodash": "^4.17.15",
+    "mqtt": "^3.0.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.2.0",
-    "typescript": "3.7.2"
+    "tinygradient": "^1.0.0",
+    "typescript": "3.7.2",
+    "uuid": "^3.3.3"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,0 +1,20 @@
+import { useRef } from 'react';
+import mqtt from 'mqtt'
+
+const client = mqtt.client('test.mosquitto.org')
+
+interface Msg {
+  payload: {}
+}
+
+function useMqtt(topic: string, callback: (msg: Msg) => void) {
+    
+  const client = useRef(mqtt.connect('mqtt://test.mosquitto.org'))
+  client.on('connect', () => {
+    client.subscribe('e_sensor/+');
+    client.on('message', function (topic, message) => {
+      console.log(message.toString());
+    });
+  });
+
+}
